@@ -8,6 +8,26 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+global.$ = require('jquery')
+import jQuery from 'jquery'
+window.jQuery = jQuery
+window.$ = jQuery
+
+const images = require.context('../images', true)
+
+require("../css/application.scss")
+require("./owl-carousel.js");
+require("./accordions.js");
+require("./datepicker.js");
+require("./scrollreveal.min.js");
+require("./jquery.counterup.min.js");
+require("./imgfix.min.js");
+require("./slick.js");
+require("./lightbox.js");
+require("./isotope.js");
+
+require("./custom.js");
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
