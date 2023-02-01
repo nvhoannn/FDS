@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 2023_02_17_145910) do
     t.string "email_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_digest"
+    t.string "password_digest"
+    t.string "reset_digest"
   end
 
   add_foreign_key "feedbacks", "users"
