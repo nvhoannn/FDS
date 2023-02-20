@@ -1,0 +1,31 @@
+<h1>All Products</h1>
+<div class="line">
+</div>
+<div class="button-products">
+  <p><%= link_to "Create new product", new_admin_product_path %></p>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th>Details</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each_with_index do |product, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to product.name, edit_admin_product_path(product) %></td>
+        <td><%= number_to_currency(product.price, unit: "", separator: ".", delimiter: ",", precision: 0) %> VND</td>
+        <td><%= product.product_type %></td>
+        <td><%= product.details %></td>
+        <td><%= link_to "Delete", [:admin, product], method: :delete,
+                                        data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

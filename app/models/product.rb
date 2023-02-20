@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-	belongs_to :feedback
+	belongs_to :category
 	has_many :order_lists
 end
