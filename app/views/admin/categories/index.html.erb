@@ -1,0 +1,23 @@
+<h1>All Category</h1>
+  <div class="button-category">
+    <p><%= link_to "Create Category", new_admin_category_path %></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each_with_index do |category, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to category.name, edit_admin_category_path(category) %></td>
+          <td><%= link_to "Delete", [:admin, category], method: :delete,
+                                          data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
