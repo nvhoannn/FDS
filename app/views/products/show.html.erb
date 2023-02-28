@@ -1,0 +1,56 @@
+<% provide(:title, @product.name) %>
+<div class="d-flex align-items-center ">
+  <div class ="pdetail mr-4 ml-4 mt-4" style = "width: 250px; height: 300px; background-color: dimgray; ">
+  </div>
+  <div class="fdetail mr-4 ml-4 mt-4 ">
+    <h2 class="font-weight-bold"><%= @product.name %></h2>
+    <h2><%= number_to_currency(@product.price) %></h2>
+    <button type="button" class="btn btn-danger">Mua Ngay</button>
+  </div>
+</div>
+
+<div class="show_detail text-center mt-5 h2 font-weight-bold">
+  Chi tiết sản phẩm
+  <hr style="background: brown; width: 80px ;">
+</div>
+
+<div>
+  <%= @product.details %>
+</div>
+
+<div class="show_detail text-center mt-5 h2 font-weight-bold">
+  Sản phẩm nổi bật
+  <hr style="background: brown; width: 80px ;">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag "team-1.jpg", class: 'custom-pic' %>
+      San pham1
+      <div>
+				123 VNĐ 
+      </div>
+    </div>
+    <div class="col-md-3">
+      <%= image_tag "team-1.jpg", class: 'custom-pic'%>
+      San pham2
+      <div>456 VNĐ </div>
+    </div>
+    <div class="col-md-3">
+      <%= image_tag "team-1.jpg", class: 'custom-pic' %>
+      San pham3
+      <div>789 VNĐ </div>
+		</div>
+    <div class="col-md-3">
+      <%= image_tag "team-1.jpg", class: 'custom-pic'%>
+      San pham 4
+      <div>123 VNĐ </div>
+    </div>
+    <div class="col-md-3">
+      <%= image_tag "team-1.jpg", class: 'custom-pic'%>
+      San pham5
+      <div>456 VNĐ </div>
+      </div>
+  </div>
+</div>

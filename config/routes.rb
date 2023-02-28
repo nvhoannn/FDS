@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
   namespace :admin do
     root :to => 'static_pages#index'
     resources :categories
@@ -28,10 +27,10 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-
+  resources :products, only: [:index, :show]
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :categories, only: [:index, :show]
 end
-
