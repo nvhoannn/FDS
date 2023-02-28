@@ -1,0 +1,14 @@
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages'%>
+  <%= f.label :name%>
+  <%= f.text_field :name ,class: 'form-control'%>
+  <%= f.label :email_address%>
+  <%= f.email_field :email_address ,class: 'form-control'%>
+  <%= f.label :password%>
+  <%= f.password_field :password ,class: 'form-control'%>
+  <%= f.label :password_confirmation, "Confirmation"%>
+  <%= f.password_field :password_confirmation ,class: 'form-control'%>
+  <div class="form-group mb-4 text-center">
+    <%= f.submit yield(:button_text), class: "btn btn-primary w-100" %>
+  </div>
+<% end %>
