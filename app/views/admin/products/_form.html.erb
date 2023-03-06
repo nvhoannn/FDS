@@ -8,6 +8,8 @@
     <%= f.text_field :product_type, class: 'form-control' %>
     <%= f.label "Details" %>
     <%= f.text_area :details, class: 'form-control' %>
+    <%= f.label "Image" %>
+    <%= f.file_field :image, class: 'form-control' %>
     <%= f.label "Category" %>
     <%= f.select :category_id, options_for_select(@categories.pluck(:name, :id)), {}, class:'form-control' %>
     <br>

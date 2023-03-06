@@ -1,0 +1,21 @@
+<h1 class="text-center">All Orders </h1>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Orderer</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= order.user.name %></td>
+        <td><%= order.name %></td>
+        <td><%= order.total_price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
