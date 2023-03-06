@@ -12,6 +12,7 @@ class Admin::ProductsController < Admin::AdminController
   
   def create
     @product = Product.new(product_params)
+    @product.image.attach(params[:product][:image])
     if @product.save
        flash[:success] = "Create successfully"
        redirect_to admin_products_path
@@ -40,7 +41,7 @@ class Admin::ProductsController < Admin::AdminController
   private
 
   def product_params
-    params.require(:product).permit :name, :price, :product_type, :details, :category_id
+    params.require(:product).permit :name, :price, :product_type, :details, :category_id, :image
   end
 
   def find_product
