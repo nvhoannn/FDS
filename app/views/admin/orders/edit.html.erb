@@ -1,0 +1,25 @@
+<% provide(:title, "Manage Orders") %>
+<h1 class="text-center">Manage Orders</h1>
+
+<%= render @order.order_items %>
+
+  <br>
+<div style="margin-left: 10px;">
+<% if @order.status == "confirm" %>
+  <div class="trade-button-delete">
+    <%= button_to 'Cancel Order',
+     update_status_admin_order_path(id: @order.id , status: "rejected"),
+    :method => :put,
+     data: {:confirm => 'Are you sure?' },
+     style:"border-radius: 50px" %>
+  </div>
+<% else %>
+  <div class="trade-button-mua">
+    <%= button_to 'Order confirmation',
+     update_status_admin_order_path(id: @order.id, status: "confirm"),
+    :method => :put,
+    data: {:confirm => 'Bạn Đã Chắc Chưa' },
+    style:"border-radius: 50px" %>
+  </div>
+<% end %>
+</div>
